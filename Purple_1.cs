@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_8
 {
-    class Purple_1 : Purple
+    public class Purple_1 : Purple
     {
         private string _output = null;
         public string Output => _output;

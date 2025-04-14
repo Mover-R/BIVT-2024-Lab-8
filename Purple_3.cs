@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Lab_8
 {
-    internal class Purple_3 : Purple
+    public class Purple_3 : Purple
     {
         private string _output = null;
         private (string, char)[] _codes = new (string, char)[5];
