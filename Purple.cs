@@ -16,6 +16,7 @@ namespace Lab_8
         {
             _input = input;
         }
+        //
 
         protected bool IsSeparator(char c)
         {
