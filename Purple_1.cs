@@ -16,7 +16,7 @@ namespace Lab_8
         {
             _output = ToString();
         }
-        public string ToString()
+        public override string ToString()
         {
             var s = Input;
             string[] words = new string[0];

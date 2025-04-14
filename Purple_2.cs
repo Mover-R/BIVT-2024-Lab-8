@@ -10,28 +10,34 @@ namespace Lab_8
     internal class Purple_2 : Purple
     {
         private string[] _output = null;
+        private string _tostring = null;
         private int _len = 50;
         public string[] Output
         {
             get
             {
-                /*string res = "";
-                foreach (string w in s)
-                {
-                    //Console.WriteLine(w);
-                    res += (w + "\r\n");
-                }
-                //res =  res.Substring(0, res.Length - 4);*/
                 return _output;
             }
         }
         public Purple_2(string input) : base(input) { }
         public override void Review()
         {
-            string[] s = ToString();
+            string[] s = ToArray();
             _output = s;
+                string res = "";
+                foreach (string w in s)
+                {
+                    //Console.WriteLine(w);
+                    res += (w + "\r\n");
+                }
+                //res =  res.Substring(0, res.Length - 4);
+                _tostring = res;
         }
-        public string[] ToString()
+        public override string ToString()
+        {
+            return _tostring;
+        }
+        public string[] ToArray()
         {
             string s = Input;
             string[] words = Words(s);
