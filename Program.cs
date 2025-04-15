@@ -16,7 +16,7 @@ namespace BIVT_2024_Lab_8
             //Program.Purple_1_Test();
             //Program.Purple_2_Test();
             //Program.Purple_3_Test();
-            Program.Purple_4_Test();
+            //Program.Purple_4_Test();
         }
 
         public static void Purple_1_Test()
@@ -75,22 +75,23 @@ namespace BIVT_2024_Lab_8
                 "Первое  кругосветное путешествие было осуществлено\r\nфлотом, возглавляемым португальским исследователем\r\nФернаном   Магелланом.   Путешествие  началось  20\r\nсентября  1519 года, когда флот, состоящий из пяти\r\nкораблей  и  примерно  270  человек, отправился из\r\nпорту   Сан-Лукас  в  Испании.  Хотя  Магеллан  не\r\nзакончил  свое путешествие из-за гибели в битве на\r\nФилиппинах  в  1521  году,  его  экспедиция  стала\r\nпервой,  которая успешно обогнула Землю и доказала\r\nее  круглую  форму.  Это путешествие открыло новые\r\nморские   пути   и  имело  огромное  значение  для\r\nкартографии     и     географических     открытий.",
             };
 
-            /*
+            
             Console.WriteLine("Testing Purple_2");
             for(int i = 0;i<Tests.Length;i++)
             {
                 Console.WriteLine($"Test{i}");
                 Purple_2 test = new Purple_2(Tests[i]);
-                if (test.Output.CompareTo(Answ[i]) > 0)
+                test.Review();
+                if (test.ToString().CompareTo(Answ[i]) > 0)
                 {
-                    Console.WriteLine(test.Output.CompareTo(Answ[i]));
+                    Console.WriteLine(test.ToString().CompareTo(Answ[i]));
                     Console.WriteLine(test.Output);
                     Console.WriteLine(Answ[i]);
                     Console.WriteLine();
                     return;
                 }
             }
-            */
+            
             Console.WriteLine("Purple_2_Test working correctly SUCCESS!!!");
         }
 
@@ -186,11 +187,12 @@ namespace BIVT_2024_Lab_8
             {
                 Console.WriteLine($"Teset{i - 6}");
                 Purple_3 Th = new Purple_3(Tests[i - 6]);
+                Th.Review();
                 Purple_4 T = new Purple_4(Tests[i], Th.Codes);
                 T.Review();
-                //Console.WriteLine(T.Output);
-                //Console.WriteLine(Answ[i]);
-                //Console.WriteLine();
+                Console.WriteLine(T.Output);
+                Console.WriteLine(Answ[i]);
+                Console.WriteLine();
                 if (T.ToString().CompareTo(Answ[i]) > 0)
                 {
                     Console.WriteLine(T.ToString());

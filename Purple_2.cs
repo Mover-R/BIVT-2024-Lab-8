@@ -24,20 +24,14 @@ namespace Lab_8
         {
             string[] s = ToArray();
             _output = s;
-                string res = "";
-                foreach (string w in s)
-                {
-                    //Console.WriteLine(w);
-                    res += (w + "\r\n");
-                }
-                //res =  res.Substring(0, res.Length - 4);
-                _tostring = res;
+            string res = string.Join("\r\n", s);
+            _tostring = res;
         }
         public override string ToString()
         {
             return _tostring;
         }
-        public string[] ToArray()
+        private string[] ToArray()
         {
             string s = Input;
             string[] words = Words(s);
