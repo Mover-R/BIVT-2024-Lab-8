@@ -86,10 +86,10 @@ namespace Lab_8
             int basic = need / (cnt - 1), extra = need % (cnt - 1);
             //Console.WriteLine($"{len},  {_len}, {cnt},  {need}, {basic}, {extra}");
             var res = new StringBuilder();
-            foreach (var word in s)
+            for (int i = 0; i < s.Length; i++)
             {
-                res.Append(word);
-                res.Append(new string(' ', basic + (extra <= 0 ? 0 : 1)));
+                res.Append(s[i]);
+                if (i != s.Length - 1) res.Append(new string(' ', basic + (extra <= 0 ? 0 : 1)));
                 extra--;
             }
             return res.ToString();

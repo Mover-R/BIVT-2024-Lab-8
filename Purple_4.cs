@@ -12,7 +12,7 @@ namespace Lab_8
         private (string, char)[] _codes = new (string, char)[5];
         private int _index = 0;
         public string Output => _output;
-        public (string, char)[] Codes
+        private (string, char)[] Codes
         {
             get
             {
@@ -23,13 +23,9 @@ namespace Lab_8
 
         public Purple_4(string input, (string, char)[] codes) : base(input)
         {
-            (string, char)[] _codes = codes;
+            _codes = codes;
         }
         public override void Review()
-        {
-            _output = ToString();
-        }
-        public override string ToString()
         {
             string uncompressed = Input;
             foreach (var c in _codes)
@@ -37,8 +33,11 @@ namespace Lab_8
                 //Console.WriteLine($"{c.Item1}   {c.Item2}");
                 uncompressed = uncompressed.Replace(c.Item2.ToString(), c.Item1);
             }
-
-            return uncompressed;
+            _output = uncompressed;
+        }
+        public override string ToString()
+        {
+            return _output;
         }
         private string Compress()
         {

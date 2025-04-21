@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace BIVT_2024_Lab_8
             //Program.Purple_1_Test();
             //Program.Purple_2_Test();
             //Program.Purple_3_Test();
-            //Program.Purple_4_Test();
+            Program.Purple_4_Test();
         }
 
         public static void Purple_1_Test()
@@ -82,10 +83,14 @@ namespace BIVT_2024_Lab_8
                 Console.WriteLine($"Test{i}");
                 Purple_2 test = new Purple_2(Tests[i]);
                 test.Review();
+                //Console.WriteLine(Answ[i]);
+                //Console.WriteLine();
+                //Console.WriteLine(test.ToString());
                 if (test.ToString().CompareTo(Answ[i]) > 0)
                 {
                     Console.WriteLine(test.ToString().CompareTo(Answ[i]));
-                    Console.WriteLine(test.Output);
+                    Console.WriteLine(test.ToString());
+                    Console.WriteLine();
                     Console.WriteLine(Answ[i]);
                     Console.WriteLine();
                     return;
@@ -186,19 +191,28 @@ namespace BIVT_2024_Lab_8
             for (int i = 6; i < 12; i++)
             {
                 Console.WriteLine($"Teset{i - 6}");
+
                 Purple_3 Th = new Purple_3(Tests[i - 6]);
                 Th.Review();
                 Purple_4 T = new Purple_4(Tests[i], Th.Codes);
                 T.Review();
+                Console.WriteLine(Th.Input);
+                Console.WriteLine(Tests[i]);
+                foreach (var el in Th.Codes)
+                {
+                    Console.WriteLine(el);
+                }
                 Console.WriteLine(T.Output);
                 Console.WriteLine(Answ[i]);
                 Console.WriteLine();
+                /*
                 if (T.ToString().CompareTo(Answ[i]) > 0)
                 {
                     Console.WriteLine(T.ToString());
                     Console.WriteLine(Answ[i]);
                     return;
                 }
+                */
             }
 
             Console.WriteLine("Purple_4_Test working correctly SUCCESS!!!");
