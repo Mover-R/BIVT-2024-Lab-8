@@ -78,7 +78,6 @@ namespace Lab_8
                 foreach (var word in s)
                 {
                     r.Append(word);
-                    r.Append(new string(' ', need));
                 }
                 return r.ToString();
             }
